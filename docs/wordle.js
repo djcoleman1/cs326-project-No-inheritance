@@ -13,23 +13,28 @@ export class Game {
     for (let i = 0; i < 26; ++i) {
       this.keyboard.push(String.fromCharCode(97 + i));
     }
-    this.keyboard.push("backspace");
-    this.keyboard.push("enter");
   }
 
-  render(element) {
-    element.innerHTML = "";
+  render(board, keyboard) {
+    board.innerHTML = "";
+    keyboard.innerHTML = "";
     for (let i = 0; i < 6; ++i) {
       for (let j = 0; j < 5; ++j) {
         const div = document.createElement('div');
         div.classList.add('grid-item');
         div.innerText = this.grid[i][j] === null ? '' : this.grid[i][j];
-        /*const label = scoring.label(i, j);
-        if (label !== '') {
-          div.classList.add(label);
-        }*/
-        element.appendChild(div);
+        board.appendChild(div);
       }
     }
+    for (let i = 0; i < this.keyboard.length; ++i) {
+      const div = document.createElement('div');
+      div.classList.add('grid-item');
+      div.innerText = this.keyboard[i];
+      keyboard.appendChild(div);
+      div.addEventListener("click", () => { // this function should add the clicked letter to the board, but not enter the word
+
+      });
+    }
+
   }
 }

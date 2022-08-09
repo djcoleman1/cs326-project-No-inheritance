@@ -7,6 +7,15 @@
     margin-bottom: 3em;
 }
 
+#keyboard {
+    width: 400px;
+    height: 120px;
+    margin: auto;
+    display: grid;
+    grid: repeat(3, auto) / auto-flow;
+    margin-top: 3em;
+}
+
 .grid-item {
     height: 40px;
     width: 40px;
@@ -20,6 +29,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.grid-item:hover {
+    background-color: lightgray;
 }
 
 .CLCL { /* Correct Letter, Correct Location */

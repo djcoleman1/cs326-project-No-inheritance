@@ -1,15 +1,16 @@
 import { Game } from "./wordle.js";
 
 const game = new Game();
-game.render(document.getElementById("board"));
-/*
+let board = document.getElementById("board");
+let keyboard = document.getElementById("keyboard");
+game.render(board, keyboard);
+
 document.getElementById("enter").addEventListener("click", () => {
   const word = document.getElementById("word").value;
   game.playWord(word);
-  game.render(document.getElementById("board"));
+  game.render(board, keyboard);
 });
 
 document.getElementById("backspace").addEventListener("click", () => {
-  game.render(document.getElementById("board"));
+  game.render(board, keyboard);
 });
-*/
