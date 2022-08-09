@@ -12,7 +12,7 @@
     height: 120px;
     margin: auto;
     display: grid;
-    grid: repeat(3, auto) / auto-flow;
+    grid-template-columns: repeat(auto-fill, 40px);
     margin-top: 3em;
 }
 

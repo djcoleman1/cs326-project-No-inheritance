@@ -9,6 +9,7 @@ export class Game {
       }
       this.grid[i] = arr;
     }
+    this.curSpace = this.grid[0];
     this.keyboard = [];
     for (let i = 0; i < 26; ++i) {
       this.keyboard.push(String.fromCharCode(97 + i));
@@ -36,5 +37,9 @@ export class Game {
       });
     }
 
+  }
+
+  getCurSpace() {
+    return this.curSpace;
   }
 }
