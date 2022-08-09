@@ -1,8 +1,35 @@
 #board {
-    width: 600px;
-    height: 600px;
+    width: 200px;
+    height: 240px;
     margin: auto;
     display: grid;
     grid: repeat(6, auto) / auto-flow;
     margin-bottom: 3em;
+}
+
+.grid-item {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: bold;
+
+    /* The following will align the letters to the center of each square */
+    /* See this useful guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CLCL { /* Correct Letter, Correct Location */
+    background-color: lightgreen;
+}
+
+.CLIL { /* Correct Letter, Incorrect Location */
+    background-color: yellow;
+}
+
+.ILIL { /* Incorrect Letter, Incorrect Location */
+    background-color: gray;
 }
