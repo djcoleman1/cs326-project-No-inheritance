@@ -12,5 +12,6 @@ document.getElementById("enter").addEventListener("click", () => {
 });
 
 document.getElementById("backspace").addEventListener("click", () => {
+  game.goBack();
   game.render(board, keyboard);
 });

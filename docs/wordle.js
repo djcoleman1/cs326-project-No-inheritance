@@ -9,7 +9,10 @@ export class Game {
       }
       this.grid[i] = arr;
     }
-    this.curSpace = this.grid[0];
+    this.curLoc = [0, 0];
+    this.prevLoc = null;
+    this.curBlock = this.grid[0][0];
+    this.prevBlock = null;
     this.keyboard = [];
     for (let i = 0; i < 26; ++i) {
       this.keyboard.push(String.fromCharCode(97 + i));
@@ -33,13 +36,41 @@ export class Game {
       div.innerText = this.keyboard[i];
       keyboard.appendChild(div);
       div.addEventListener("click", () => { // this function should add the clicked letter to the board, but not enter the word
-
+        this.setBlock(this.curLoc, div.innerText);
+        this.render(document.getElementById("board"), document.getElementById("keyboard"));
+        let temp = this.curLoc;
+        this.curLoc = [temp[0], temp[1] + 1];
+        this.prevLoc = temp;
       });
     }
 
   }
 
-  getCurSpace() {
-    return this.curSpace;
+  getCurLoc() {
+    return this.curLoc;
+  }
+
+  setCurLoc(coordinates) { // Sets coordinates of current block to coordinates array: [row, column]
+    this.curLoc = coordinates;
+  }
+
+  getPrevSpace() {
+    return this.prevSpace;
+  }
+
+  setPrevSpace(coordinates) {
+    this.prevSpace = coordinates;
+  }
+
+  setBlock(coordinates, letter) { // setBlock(location: [number, number], letter: String, element: HTML div element)
+    this.grid[coordinates[0]][coordinates[1]] = letter;
+  }
+
+  goBack() {
+    let idx = this.prevLoc;
+    this.grid[idx[0]][idx[1]] = null;
+    this.curLoc = this.prevLoc;
+    let temp = this.prevLoc;
+    this.prevLoc = [temp[0], temp[1] - 1];
   }
 }
