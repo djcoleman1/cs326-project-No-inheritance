@@ -1,4 +1,4 @@
-import { Game } from "/server/wordle.js";
+import { Game } from "/wordle.js";
 
 const game = new Game();
 let board = document.getElementById("board");
