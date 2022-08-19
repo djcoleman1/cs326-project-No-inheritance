@@ -3,7 +3,7 @@
     height: 240px;
     margin: auto;
     display: grid;
-    grid: repeat(6, auto) / auto-flow;
+    grid: auto-flow / repeat(5, auto);
     margin-bottom: 3em;
 }
 
@@ -13,7 +13,9 @@
     margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, 40px);
+    text-align: center;
     margin-top: 3em;
+    margin-bottom: 1em;
 }
 
 .grid-item {
@@ -45,4 +47,8 @@
 
 .ILIL { /* Incorrect Letter, Incorrect Location */
     background-color: gray;
+}
+
+#controls {
+    text-align: center;
 }
