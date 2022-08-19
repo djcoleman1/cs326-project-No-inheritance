@@ -1,0 +1,27 @@
+{
+  "name": "cs326-project-no-inheritance",
+  "version": "1.0.0",
+  "description": "CS 326 Project No-inheritance",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djcoleman1/cs326-project-No-inheritance.git"
+  },
+  "author": "Davis Coleman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djcoleman1/cs326-project-No-inheritance/issues"
+  },
+  "homepage": "https://github.com/djcoleman1/cs326-project-No-inheritance#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
