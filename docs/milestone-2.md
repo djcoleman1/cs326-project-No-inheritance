@@ -15,7 +15,7 @@ The game Wordle With More Options will be pretty much the same as traditional Wo
 ### Picture of wordle in web browser
 ![Wordle](./Wordle-Screenshot.png)
 
-The board of 6 rows by 5 columns is the area where the word guesses and attempts go. The keyboard, which will be centered when I figure it out, has all the letters in the alphabet. When fully functioning, it will place the letter last clicked on the current spot in the current attempt row. The enter and backspace buttons, which will also be centered, will compare the current guess with the correct word (moving onto the next row/attempt), and remove the last letter that was put on the board, respectively.
+The board of 6 rows by 5 columns is the area where the word guesses and attempts go. The keyboard has all the letters in the alphabet. When fully functioning, it will place the letter last clicked on the current spot in the current attempt row. The enter and backspace buttons, which will also be centered, will compare the current guess with the correct word (moving onto the next row/attempt), and remove the last letter that was put on the board, respectively.
 
 
 
