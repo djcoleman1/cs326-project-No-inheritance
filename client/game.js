@@ -1,4 +1,7 @@
 // This will provide the functionality for the WORDLE game
+
+import {scoring} from './scoring.js';
+
 class Game {
   constructor() {
     this.grid = [];
@@ -38,11 +41,11 @@ class Game {
       keyboard.appendChild(div);
       const self = this;
       div.addEventListener("click", () => { // this function should add the clicked letter to the board, but not enter the word
-        this.setBlock(this.curLoc, div.innerText);
-        this.render(document.getElementById("board"), document.getElementById("keyboard"));
-        let temp = this.curLoc;
-        this.curLoc = [temp[0], temp[1] + 1];
-        this.prevLoc = temp;
+        self.setBlock(self.curLoc, div.innerText);
+        self.render(document.getElementById("board"), document.getElementById("keyboard"));
+        const temp = self.curLoc;
+        self.curLoc = [temp[0], temp[1] + 1];
+        self.prevLoc = temp;
       });
     }
 
@@ -74,6 +77,14 @@ class Game {
     this.curLoc = this.prevLoc;
     let temp = this.prevLoc;
     this.prevLoc = [temp[0], temp[1] - 1];
+  }
+
+  checkWord(word) {
+
+  }
+
+  playWord(word) {
+
   }
 }
 
