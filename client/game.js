@@ -1,25 +1,11 @@
 // This will provide the functionality for the WORDLE game
 
 import {scoring} from './scoring.js';
+import * as utils from "./wordleUtils.js";
 
 class Game {
   constructor() {
-    this.grid = [];
-    for (let i = 0; i < 6; ++i) {
-      let arr = [];
-      for (let j = 0; j < 5; ++j) {
-        arr.push(null);
-      }
-      this.grid[i] = arr;
-    }
-    this.curLoc = [0, 0];
-    this.prevLoc = null;
-    this.curBlock = this.grid[0][0];
-    this.prevBlock = null;
-    this.keyboard = [];
-    for (let i = 0; i < 26; ++i) {
-      this.keyboard.push(String.fromCharCode(97 + i));
-    }
+    this.reset();
   }
 
   // Renders the board and keyboard after every click
@@ -80,11 +66,27 @@ class Game {
   }
 
   checkWord(word) {
-
+    return word === this.answer;
   }
 
-  playWord(word) {
-
+  reset() {
+    this.answer = utils.getRandomWord();
+    this.grid = [];
+    for (let i = 0; i < 6; ++i) {
+      let arr = [];
+      for (let j = 0; j < 5; ++j) {
+        arr.push(null);
+      }
+      this.grid[i] = arr;
+    }
+    this.curLoc = [0, 0];
+    this.prevLoc = null;
+    this.curBlock = this.grid[0][0];
+    this.prevBlock = null;
+    this.keyboard = [];
+    for (let i = 0; i < 26; ++i) {
+      this.keyboard.push(String.fromCharCode(97 + i));
+    }
   }
 }
 
