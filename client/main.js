@@ -1,6 +1,5 @@
-import { Game } from "/wordle.js";
+import { game } from "/game.js";
 
-const game = new Game();
 let board = document.getElementById("board");
 let keyboard = document.getElementById("keyboard");
 game.render(board, keyboard);

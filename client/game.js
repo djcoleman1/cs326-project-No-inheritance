@@ -1,5 +1,5 @@
 // This will provide the functionality for the WORDLE game
-export class Game {
+class Game {
   constructor() {
     this.grid = [];
     for (let i = 0; i < 6; ++i) {
@@ -74,3 +74,6 @@ export class Game {
     this.prevLoc = [temp[0], temp[1] - 1];
   }
 }
+
+const game = new Game();
+export { game };
