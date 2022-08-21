@@ -19,6 +19,7 @@ class Game {
     }
   }
 
+  // Renders the board and keyboard after every click
   render(board, keyboard) {
     board.innerHTML = "";
     keyboard.innerHTML = "";
@@ -35,6 +36,7 @@ class Game {
       div.classList.add('grid-item');
       div.innerText = this.keyboard[i];
       keyboard.appendChild(div);
+      const self = this;
       div.addEventListener("click", () => { // this function should add the clicked letter to the board, but not enter the word
         this.setBlock(this.curLoc, div.innerText);
         this.render(document.getElementById("board"), document.getElementById("keyboard"));
