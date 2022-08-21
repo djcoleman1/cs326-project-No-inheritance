@@ -4,17 +4,28 @@ import express from 'express';
 import logger from 'morgan';
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(logger('dev'));
 app.use('/', express.static('client'));
 
-app.get();
+// READ
+app.get('/topScores', (req, res) => {
 
-app.put();
+});
 
-app.post();
+// UPDATE
+app.put('/newScore', (req, res) => {
 
-app.delete();
+});
+
+// CREATE
+app.post('/newPlayer', (req, res) => {
+
+});
+
+// DELETE
+app.delete('/deletePlayer', (req, res) => {
+
+});
