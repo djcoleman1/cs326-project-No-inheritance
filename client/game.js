@@ -1,6 +1,5 @@
 // This will provide the functionality for the WORDLE game
 
-import {scoring} from './scoring.js';
 import * as utils from "./wordleUtils.js";
 
 class Game {
@@ -32,6 +31,7 @@ class Game {
         const temp = self.curLoc;
         self.curLoc = [temp[0], temp[1] + 1];
         self.prevLoc = temp;
+        self.attemptWords[self.attemptCount].push(div.innerText);
       });
     }
 
@@ -39,6 +39,10 @@ class Game {
 
   getCurLoc() {
     return this.curLoc;
+  }
+
+  incrementAttempt() {
+    this.attemptCount += 1;
   }
 
   setCurLoc(coordinates) { // Sets coordinates of current block to coordinates array: [row, column]
@@ -53,8 +57,12 @@ class Game {
     this.prevSpace = coordinates;
   }
 
-  setBlock(coordinates, letter) { // setBlock(location: [number, number], letter: String, element: HTML div element)
+  setBlock(coordinates, letter) { // setBlock(location: [number, number], letter: String)
     this.grid[coordinates[0]][coordinates[1]] = letter;
+  }
+
+  getScore() {
+    return 6 - this.attemptCount;
   }
 
   goBack() {
@@ -63,14 +71,21 @@ class Game {
     this.curLoc = this.prevLoc;
     let temp = this.prevLoc;
     this.prevLoc = [temp[0], temp[1] - 1];
+    this.attemptWords[this.attemptCount].pop();
   }
 
   checkWord(word) {
     return word === this.answer;
   }
 
+  getAttemptData() {
+    return {"attemptCount": this.attemptCount, "attempts": this.attemptWords};
+  }
+
   reset() {
     this.answer = utils.getRandomWord();
+    this.attemptCount = 0;
+    this.attemptWords = [[], [], [], [], [], []];
     this.grid = [];
     for (let i = 0; i < 6; ++i) {
       let arr = [];

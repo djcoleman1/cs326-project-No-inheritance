@@ -18,9 +18,18 @@
     <div id="controls">
       <input type="button" id="enter" value="Enter" />
       <input type="button" id="backspace" value="Backspace" />
+      <input type="button" id="newGame" value="New Game" />
     </div>
     <div id="scoreboard">
-      <label>Player Name: </label><input type="text" id="name"/>
+      <label for="name">Player Name: </label><input type="text" id="name" />
+      <input type="button" id="saveScore" value="Click to save your score" />
+      <input type="button" id="seeScores" value="Click to see top scores!" />
+      <table id="scoreTable">
+        <tr>
+          <th>Player</th>
+          <th>Score</th>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
